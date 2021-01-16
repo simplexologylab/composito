@@ -8,6 +8,9 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
+import "@fontsource/antic"
+import "@fontsource/caveat"
+
 
 import "./layout.css"
 
@@ -31,6 +34,7 @@ const MainContainer = styled.div`
 const H1 = styled.h1`
   margin: 0;
   text-align: center;
+  font-family: Caveat;
 `
 
 const Title = styled(Link)`
