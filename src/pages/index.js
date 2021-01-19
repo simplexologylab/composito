@@ -19,6 +19,10 @@ const Container = styled.div`
 const RecipeLink = styled.div`
   padding: 20px;
 `
+const Image = styled(Img)`
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+`
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -29,7 +33,7 @@ const IndexPage = ({ data }) => (
             <RecipeLink>
               {frontmatter.title}
               <br />
-              <Img fixed={fields.cover.childImageSharp.fixed} />
+              <Image fixed={fields.cover.childImageSharp.fixed} />
             </RecipeLink>
           </Link>
       ))}
@@ -55,7 +59,7 @@ export const pageQuery = graphql`
           slug
           cover {
             childImageSharp {
-              fixed(width: 300) {
+              fixed(width: 250, height: 250) {
                 ...GatsbyImageSharpFixed
               }
             }

@@ -25,7 +25,7 @@ const Picture = styled(Img)`
   max-width: 500px;
   margin: 0 auto;
   border-radius: 20px;
-  filter: drop-shadow(0 0 0.55rem #2E282A)
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 `
 
 const Content = styled.div`
