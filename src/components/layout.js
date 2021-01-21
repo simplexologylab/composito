@@ -5,37 +5,67 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import styled from "styled-components"
-import "@fontsource/antic"
-import "@fontsource/caveat"
+import React from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import styled from "styled-components";
+import "@fontsource/antic";
+import "@fontsource/caveat";
+import "@fontsource/rock-salt";
 
-
-import "./layout.css"
+import "./layout.css";
 
 const Header = styled.header`
   background: #f4e8c1;
   margin-bottom: 1.45rem;
-`
+
+`;
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
   max-width: 760px;
   padding: 1.45rem 1.0875rem;
-`
+`;
 
 const MainContainer = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1.0875rem 1.45rem;
-`
+`;
 
 const H1 = styled.h1`
   margin: 0;
   text-align: center;
-  font-family: Caveat;
-`
+  animation: fadeIn ease 1.5s;
+-webkit-animation: fadeIn ease 1.5s;
+-moz-animation: fadeIn ease 1.5s;
+-o-animation: fadeIn ease 1.5s;
+-ms-animation: fadeIn ease 1.5s;
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+`;
 
 const Title = styled(Link)`
   color: #331e38;
@@ -45,7 +75,7 @@ const Title = styled(Link)`
 const Footer = styled.footer`
   margin: 2rem;
   text-align: center;
-`
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -56,7 +86,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -72,11 +102,9 @@ const Layout = ({ children }) => {
       <MainContainer>
         <main>{children}</main>
       </MainContainer>
-      <Footer>
-        {new Date().getFullYear()}, Built for 🍲 🍽️ 😋
-      </Footer>
+      <Footer>{new Date().getFullYear()}, Built for 🍲 🍽️ 😋</Footer>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
