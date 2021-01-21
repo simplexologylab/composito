@@ -17,54 +17,54 @@ import "./layout.css";
 const Header = styled.header`
   background: #f4e8c1;
   margin-bottom: 1.45rem;
-
 `;
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
   max-width: 760px;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.05rem 1.0875rem;
 `;
 
 const MainContainer = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1.0875rem 1.45rem;
+
+  animation: fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
+  -moz-animation: fadeIn ease 1.5s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
+  }
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
 `;
 
 const H1 = styled.h1`
   margin: 0;
   text-align: center;
-  animation: fadeIn ease 1.5s;
--webkit-animation: fadeIn ease 1.5s;
--moz-animation: fadeIn ease 1.5s;
--o-animation: fadeIn ease 1.5s;
--ms-animation: fadeIn ease 1.5s;
-}
-@keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-moz-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-webkit-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-o-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
-
-@-ms-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
-}
 `;
 
 const Title = styled(Link)`
@@ -102,7 +102,7 @@ const Layout = ({ children }) => {
       <MainContainer>
         <main>{children}</main>
       </MainContainer>
-      <Footer>{new Date().getFullYear()}, Built for 🍲 🍽️ 😋</Footer>
+      <Footer>{new Date().getFullYear()}, Built for <span role="img" aria-label="cook. eat. enjoy.">🍲 🍽️ 😋</span></Footer>
     </>
   );
 };
