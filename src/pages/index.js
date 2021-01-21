@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}  from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
@@ -54,26 +54,36 @@ const Text = styled.h3`
   opacity: 1;
   color: #293241;
   margin: 0;
-  font-family: 'Rock Salt';
+  font-family: "Rock Salt";
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO />
-    <Container>
-      {data.pages.nodes.map(({ id, frontmatter, fields }) => (
-        <Card>
-          <Link to={fields.slug}>
-            <Image fluid={fields.cover.childImageSharp.fluid} />
-            <Banner>
-              <Text>{frontmatter.title}</Text>
-            </Banner>
-          </Link>
-        </Card>
-      ))}
-    </Container>
-  </Layout>
-);
+const Input = styled.input`
+  width: 90vw;
+`;
+
+const IndexPage = ({ data }) => {
+  const [search, setSearch] = useState('')
+
+  return (
+    <Layout>
+      <SEO />
+      {/* <Input onChange={e => setSearch(e.target.value)} />
+      <p>search is: {search}</p> */}
+      <Container>
+        {data.pages.nodes.map(({ id, frontmatter, fields }) => (
+          <Card>
+            <Link to={fields.slug}>
+              <Image fluid={fields.cover.childImageSharp.fluid} />
+              <Banner>
+                <Text>{frontmatter.title}</Text>
+              </Banner>
+            </Link>
+          </Card>
+        ))}
+      </Container>
+    </Layout>
+  );
+};
 
 export default IndexPage;
 

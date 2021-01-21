@@ -34,8 +34,6 @@ const Content = styled.div`
   padding: 0rem 1rem;
 `
 
-// a good one: https://cucumber.io/blog/bdd/example-mapping-introduction/
-
 export default ({ data }) => {
   const { title } = data.mdx.frontmatter
 

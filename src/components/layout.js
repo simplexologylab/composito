@@ -70,11 +70,12 @@ const H1 = styled.h1`
 const Title = styled(Link)`
   color: #331e38;
   text-decoration: none;
-`
+`;
 
 const Footer = styled.footer`
   margin: 2rem;
   text-align: center;
+  font-family: Caveat;
 `;
 
 const Layout = ({ children }) => {
@@ -102,7 +103,13 @@ const Layout = ({ children }) => {
       <MainContainer>
         <main>{children}</main>
       </MainContainer>
-      <Footer>{new Date().getFullYear()}, Built for <span role="img" aria-label="cook. eat. enjoy.">🍲 🍽️ 😋</span></Footer>
+      <Footer>
+        Enjoy food, not ads!
+        <br />
+        <span role="img" aria-label="cook. eat. enjoy.">
+          🍲 🍽️ 😋
+        </span>
+      </Footer>
     </>
   );
 };
