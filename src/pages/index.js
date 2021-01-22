@@ -1,4 +1,4 @@
-import React, {useState}  from "react";
+import React, { useState, useEffect } from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
@@ -57,20 +57,58 @@ const Text = styled.h3`
   font-family: "Rock Salt";
 `;
 
+const SearchContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Input = styled.input`
-  width: 90vw;
+  width: 60%;
+  height: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  border-top: none;
+  border-bottom: 1px solid #ddd;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.39), 0 -1px #fff, 0 1px 0 #fff;
+  transition: width 0.4s ease-in-out;
+  :focus {
+    width: 80%;
+    height: 2.5rem;
+  }
 `;
 
 const IndexPage = ({ data }) => {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("");
+  const [results, setResults] = useState(data.pages.nodes);
+
+  useEffect(() => {
+    if (search) {
+      const found = data.pages.nodes.filter(({ frontmatter }) => {
+        const find =
+          frontmatter.title.toString().toUpperCase() +
+          frontmatter.tags.toString().toUpperCase();
+        return find.includes(search.trim().toUpperCase());
+      });
+      setResults(found);
+    } else {
+      setResults(data.pages.nodes);
+    }
+  }, [data.pages.nodes, search]);
 
   return (
     <Layout>
       <SEO />
-      {/* <Input onChange={e => setSearch(e.target.value)} />
-      <p>search is: {search}</p> */}
+      <SearchContainer>
+        <Input
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          placeholder="Find a recipe ..."
+        />
+      </SearchContainer>
       <Container>
-        {data.pages.nodes.map(({ id, frontmatter, fields }) => (
+        {results.map(({ id, frontmatter, fields }) => (
           <Card>
             <Link to={fields.slug}>
               <Image fluid={fields.cover.childImageSharp.fluid} />
@@ -98,6 +136,7 @@ export const pageQuery = graphql`
         frontmatter {
           title
           date
+          tags
         }
         fields {
           slug

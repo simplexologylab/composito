@@ -106,9 +106,7 @@ const Layout = ({ children }) => {
       <Footer>
         Enjoy food, not ads!
         <br />
-        <span role="img" aria-label="cook. eat. enjoy.">
-          🍲 🍽️ 😋
-        </span>
+        <Link to="/about">About This Site</Link>
       </Footer>
     </>
   );
