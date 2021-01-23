@@ -48,7 +48,7 @@ const SecondPage = () => (
         Here's the code. Feel free to make it your own. Stay tuned and we'll
         provide instructions on how we built and deployed this site.
       </Text>
-      <a href="https://github.com/simplexologylab/composito" target="_blank"> rel="noreferrer"
+      <a href="https://github.com/simplexologylab/composito" target="_blank" rel="noreferrer">
         Here is the code
       </a>
     </Block>

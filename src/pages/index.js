@@ -99,7 +99,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO />
+      <SEO title="Composito" />
       <SearchContainer>
         <Input
           onChange={(e) => setSearch(e.target.value)}
@@ -118,7 +118,7 @@ const IndexPage = ({ data }) => {
             </Link>
           </Card>
         ))}
-        
+
       </Container>
     </Layout>
   );
