@@ -118,6 +118,7 @@ const IndexPage = ({ data }) => {
             </Link>
           </Card>
         ))}
+        
       </Container>
     </Layout>
   );
