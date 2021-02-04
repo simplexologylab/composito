@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-robots-txt`,
+    // `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -44,7 +44,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Composito`,
-        short_name: `composito`,
+        short_name: `Composito`,
         start_url: `/`,
         background_color: `#B40D1A`,
         theme_color: `#B40D1A`,
