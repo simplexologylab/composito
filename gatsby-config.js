@@ -5,6 +5,18 @@ module.exports = {
     author: `@simplexologylab`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Composito`,
+        short_name: `Composito`,
+        start_url: `/`,
+        background_color: `#f4e8c1`,
+        theme_color: `#f4e8c1`,
+        display: `standalone`,
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     // `gatsby-plugin-robots-txt`,
@@ -40,18 +52,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Composito`,
-        short_name: `Composito`,
-        start_url: `/`,
-        background_color: `#f4e8c1`,
-        theme_color: `#f4e8c1`,
-        display: `standalone`,
-        icon: `src/images/logo.png`, // This path is relative to the root of the site.
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
