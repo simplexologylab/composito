@@ -45,7 +45,7 @@ module.exports = {
       options: {
         name: `Composito`,
         short_name: `Composito`,
-        start_url: `/`,
+        start_url: `.`,
         background_color: `#f4e8c1`,
         theme_color: `#f4e8c1`,
         display: `standalone`,
